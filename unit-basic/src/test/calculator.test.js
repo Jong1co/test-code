@@ -40,9 +40,21 @@ describe("Calculator", () => {
     expect(cal.value).toBe(0);
   });
 
-  it("divide", () => {
-    cal.divide(100000000000);
-    expect(cal.value).toBe(0);
+  describe("divides", () => {
+    it("0 / 0 === NaN", () => {
+      cal.divide(0);
+      expect(cal.value).toBe(NaN);
+    });
+    it("1 / 0 === Infinity", () => {
+      cal.set(1);
+      cal.divide(0);
+      expect(cal.value).toBe(Infinity);
+    });
+    it("20 / 5 === 4", () => {
+      cal.set(20);
+      cal.divide(5);
+      expect(cal.value).toBe(4);
+    });
   });
 
   it("Value can not be greater than 100", () => {

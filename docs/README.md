@@ -15,4 +15,4 @@ package.json/scripts
 
 - test:
   - jest --watchAll => 저장할 때마다 자동적으로 test 할 수 있음
-  - jest --watch =>
+  - jest --watch => git init -> commit -> npm run test : 수정한 파일만 test함
